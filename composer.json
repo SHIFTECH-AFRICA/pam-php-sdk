@@ -1,0 +1,25 @@
+{
+    "name": "shiftechafrica/pam-php-sdk",
+    "description": "This library handles all the PAM - PayBill Account Manager API's,that are then linked to Safaricom M-pesa Daraja.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "paybill account manager",
+        "pam",
+        "m-pesa",
+        "api",
+        "stk-push",
+        "c2b",
+        "b2c"
+    ],
+    "authors": [
+        {
+            "name": "shiftechafrica",
+            "email": "info@shiftech.co.ke"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "guzzlehttp/guzzle": "^7.1"
+    }
+}
