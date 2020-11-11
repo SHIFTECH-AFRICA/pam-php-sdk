@@ -78,7 +78,7 @@ How to use the pam-php-sdk to initiate different levels of *api's*
          * Get details of one shortcode
          * by passing the id
          */
-        return (new ShortCode())->show('');
+        return (new ShortCode())->show('id');
 
 
         /**
