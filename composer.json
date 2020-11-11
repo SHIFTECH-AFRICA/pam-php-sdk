@@ -10,7 +10,8 @@
         "api",
         "stk-push",
         "c2b",
-        "b2c"
+        "b2c",
+        "lipa-na-mpesa"
     ],
     "authors": [
         {
@@ -20,6 +21,6 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "guzzlehttp/guzzle": "^7.1"
+        "guzzlehttp/guzzle": "^7.2"
     }
 }

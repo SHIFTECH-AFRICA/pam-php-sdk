@@ -21,6 +21,7 @@ return [
             'shortcode_validate' => 'm-pesa/shortcode/validate', // POST
             'stk_push' => 'm-pesa/c2b/stk-push', // POST
             'reg_c2b_url' => 'm-pesa/c2b/register-url', // POST
+            'b2c' => 'm-pesa/b2c', // POST
         ],
     ],
 
@@ -30,7 +31,7 @@ return [
      * pam account.
      * ---------------------------------------------------------------
      */
-    'pam_token' => env('PAM_API_TOKEN', 'bm9kZTw+c2VjcmV0'),
+    'pam_token' => env('PAM_API_SECRET_KEY', 'bm9kZTw+c2VjcmV0'),
 
     /**
      * ---------------------------------------------------------------------------------------------------

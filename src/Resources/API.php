@@ -28,7 +28,7 @@ class API extends JsonResource
         return [
             'api-version' => '1.0.0',
             'author' => 'easyncpay',
-            'author-url' => url('https://easyncpay.com/'),
+            'author-url' => url('https://easyncpay.com'),
         ];
     }
 }
