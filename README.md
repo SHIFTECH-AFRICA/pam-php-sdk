@@ -65,7 +65,7 @@ PAM_API_SECRET_KEY=
 Follow the steps below on how to use the pam-php-sdk:
 
 #### How to use the Library
-How to use the pam-php-sdk to initiate different levels *api's*
+How to use the pam-php-sdk to initiate different levels of *api's*
 
 ```php
         /**
