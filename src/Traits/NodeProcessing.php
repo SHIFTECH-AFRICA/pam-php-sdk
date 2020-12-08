@@ -53,7 +53,7 @@ trait NodeProcessing
      */
     private function cacheAccessToken($response)
     {
-        return Cache::remember('pam_access_token', now()->addSeconds($response->data->Expires - 1), function () use ($response) {
+        return Cache::remember('pam_access_token', now()->addSeconds($response->data->Expires - 5), function () use ($response) {
             return $response->data->Token;
         });
     }

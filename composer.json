@@ -19,8 +19,19 @@
             "email": "info@shiftech.co.ke"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "guzzlehttp/guzzle": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "PAM\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PAM\\PAMServiceProvider"
+            ]
+        }
     }
 }
