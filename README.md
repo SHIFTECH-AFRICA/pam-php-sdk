@@ -150,7 +150,7 @@ How to use the pam-php-sdk to initiate different levels of *api's*
 
 | Version | Status     | Packagist           | Namespace    | Repo                |
 |---------|------------|---------------------|--------------|---------------------|
-| 1.x     | Latest     | `shiftechafrica/pam-php-sdk` | `PAM` | [v1.2.2](https://github.com/SHIFTECH-AFRICA/pam-php-sdk/releases/tag/v1.2.2)|
+| 1.x     | Latest     | `shiftechafrica/pam-php-sdk` | `PAM` | [v1.3.3](https://github.com/SHIFTECH-AFRICA/pam-php-sdk/releases/tag/v1.3.3)|
 
 [pam-php-sdk-repo]: https://github.com/SHIFTECH-AFRICA/pam-php-sdk.git
 
