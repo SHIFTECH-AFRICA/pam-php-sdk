@@ -37,7 +37,7 @@ class RegC2bUrl
      * @param array $options
      * @return JsonResponse|mixed
      */
-    public function registerC2BURL(array $options)
+    public function registerC2BURL(array $options): JsonResponse
     {
         try {
             return json_decode($this->processRequest(
