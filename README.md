@@ -18,7 +18,7 @@
   <img src="https://poser.pugx.org/shiftechafrica/pam-php-sdk/downloads">
   </a>
   <br><br>
-  <img src="https://pam.easyncpay.com/images/undraw_investing_7u74.svg" width="500">
+  <img src="https://pam.easyncpay.com/img/about/circle.png" width="200">
 </p>
 
 ## Introduction
