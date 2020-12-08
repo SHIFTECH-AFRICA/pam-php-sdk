@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/github/issues/SHIFTECH-AFRICA/pam-php-sdk.svg">
   </a>
   <a href="https://github.com/SHIFTECH-AFRICA/pam-php-sdk/network/members">
-  <img src="https://img.shields.io/github/forks/dSHIFTECH-AFRICA/pam-php-sdk.svg">
+  <img src="https://img.shields.io/github/forks/SHIFTECH-AFRICA/pam-php-sdk.svg">
   </a>
   <a href="https://github.com/SHIFTECH-AFRICA/pam-php-sdk/stargazers">
   <img src="https://img.shields.io/github/stars/SHIFTECH-AFRICA/pam-php-sdk.svg">
@@ -58,7 +58,7 @@ A *config/.php* file will be created, follow the example below to define your ow
 
 ```php
 # set your account secret key
-PAM_API_SECRET_KEY=
+PAM_API_TOKEN=
 ```
 
 ## Usage
@@ -150,7 +150,7 @@ How to use the pam-php-sdk to initiate different levels of *api's*
 
 | Version | Status     | Packagist           | Namespace    | Repo                |
 |---------|------------|---------------------|--------------|---------------------|
-| 1.x     | Latest     | `shiftechafrica/pam-php-sdk` | `PAM` | [v1.0.0](https://github.com/SHIFTECH-AFRICA/pam-php-sdk/releases/tag/v1.0.0)|
+| 1.x     | Latest     | `shiftechafrica/pam-php-sdk` | `PAM` | [v1.2.2](https://github.com/SHIFTECH-AFRICA/pam-php-sdk/releases/tag/v1.2.2)|
 
 [pam-php-sdk-repo]: https://github.com/SHIFTECH-AFRICA/pam-php-sdk.git
 

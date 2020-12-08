@@ -42,7 +42,7 @@ trait NodeResponse
      * @param int $code
      * @return JsonResponse
      */
-    public function errorResponse($message, int $code)
+    public function errorResponse($message, int $code): JsonResponse
     {
         return (new API([
             'message' => $message

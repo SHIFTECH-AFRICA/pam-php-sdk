@@ -65,7 +65,7 @@ trait NodeProcessing
      * @param array $data
      * @return array[]
      */
-    private function setRequestOptions(array $data)
+    private function setRequestOptions(array $data): array
     {
         return [
             'headers' => [
