@@ -146,6 +146,91 @@ How to use the pam-php-sdk to initiate different levels of *api's*
         ]);
 ```
 
+## API Responses
+This are the responses that one expects from each api requests.
+
+### PayBill/ShortCode Credentials Validation
+```php
+
+   # Sample 200 response
+     "data": {
+        "Message": "The m-pesa app keys are valid."
+    }
+
+```
+
+### Register C2B URL (confirm/validation)
+```php
+
+     # Sample 200 response
+    "data": {
+        "Message": "Validation and Confirmation URLs are already registered"
+    }
+
+```
+
+### STK-PUSH/C2B LIPA NA M-PESA
+```php
+
+    # This the response for making a successful request
+    "data": {
+        "Message": "Request accepted for processing...",
+        "ReferenceNumber": "2BONOSBBTN"
+    }
+
+    # stk/c2b successful payment done.
+    "data": {
+        "Success": true,
+        "Description": "The service request is processed successfully.",
+        "ReferenceNumber": "2BONOSBBTN",
+        "PhoneNumber": "254XXXXXXXXX",
+        "MpesaReceiptNumber": "PBO2ZOBY44",
+        "Amount": 20000
+    }
+
+    # stk/c2b payment not done
+    "data": {
+        "Success": false,
+        "Description": "Request cancelled by user",
+        "ReferenceNumber": "2BOXRDNMLU",
+        "PhoneNumber": "254XXXXXXXXX"
+    }
+
+```
+
+
+### B2C/BULK PAYMENT
+```php
+
+    # This the response for making a successful request
+    "data": {
+        "Message": "Request accepted for processing...",
+        "ReferenceNumber": "2BO6BCTLYF"
+    },
+
+    # b2c successful withdraw payment done.
+    "data": {
+       'Success' => true,
+       'Description' => 'Salary payment',
+       'ReferenceNumber' => '2BO6BCTLYF',
+       'PhoneNumber' => '254XXXXXXXXX',
+       'MpesaReceiptNumber' => 'PBO2ZOBY44',
+       'Amount' => 50000,
+       'B2CUtilityAccountAvailableFunds' => 70000,
+       'B2CWorkingAccountAvailableFunds' => 70000,
+       'B2CChargesPaidAccountAvailableFunds' => 70000
+    }
+
+    # b2c withdraw payment not done.
+    "data": {
+        "Success": false,
+        "Description": "The initiator information is invalid.",
+        "ReferenceNumber": "2BO6BCTLYF",
+        "PhoneNumber": "254XXXXXXXXX"
+    }
+
+```
+
 ## Version Guidance
 
 | Version | Status     | Packagist           | Namespace    | Repo                |
