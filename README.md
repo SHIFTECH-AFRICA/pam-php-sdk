@@ -111,7 +111,7 @@ How to use the pam-php-sdk to initiate different levels of *api's*
          * @return mixed
          */
         return (new STKPush())->initiateSTK([
-            "RegionID" => "",
+            "CallingCode" => "", // 254 or 255
             "Secret" => "",
             "TransactionType" => "", // CustomerPayBillOnline or CustomerBuyGoodsOnline
             "PhoneNumber" => "",
@@ -136,7 +136,7 @@ How to use the pam-php-sdk to initiate different levels of *api's*
          * @return mixed
          */
         return (new B2C())->initiateB2C([
-            "RegionID" => "",
+            "CallingCode" => "", // 254 or 255
             "Secret" => "",
             "TransactionType" => "", // SalaryPayment or BusinessPayment or PromotionPayment
             "PhoneNumber" => "",
@@ -150,7 +150,7 @@ How to use the pam-php-sdk to initiate different levels of *api's*
 
 | Version | Status     | Packagist           | Namespace    | Repo                |
 |---------|------------|---------------------|--------------|---------------------|
-| 1.x     | Latest     | `shiftechafrica/pam-php-sdk` | `PAM` | [v1.3.3](https://github.com/SHIFTECH-AFRICA/pam-php-sdk/releases/tag/v1.3.3)|
+| 1.x     | Latest     | `shiftechafrica/pam-php-sdk` | `PAM` | [v1.3.4](https://github.com/SHIFTECH-AFRICA/pam-php-sdk/releases/tag/v1.3.4)|
 
 [pam-php-sdk-repo]: https://github.com/SHIFTECH-AFRICA/pam-php-sdk.git
 
