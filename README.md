@@ -235,7 +235,7 @@ This are the responses that one expects from each api requests.
 
 | Version | Status     | Packagist           | Namespace    | Repo                |
 |---------|------------|---------------------|--------------|---------------------|
-| 1.x     | Latest     | `shiftechafrica/pam-php-sdk` | `PAM` | [v1.3.5](https://github.com/SHIFTECH-AFRICA/pam-php-sdk/releases/tag/v1.3.5)|
+| 1.x     | Latest     | `shiftechafrica/pam-php-sdk` | `PAM` | [v1.3.6](https://github.com/SHIFTECH-AFRICA/pam-php-sdk/releases/tag/v1.3.6)|
 
 [pam-php-sdk-repo]: https://github.com/SHIFTECH-AFRICA/pam-php-sdk.git
 
