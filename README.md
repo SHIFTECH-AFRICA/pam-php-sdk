@@ -178,7 +178,7 @@ This are the responses that one expects from each api requests.
         "ReferenceNumber": "2BONOSBBTN"
     }
 
-    # stk/c2b successful payment done.
+    # stk successful payment done.
     "data": {
         "Success": true,
         "Description": "The service request is processed successfully.",
@@ -186,6 +186,18 @@ This are the responses that one expects from each api requests.
         "PhoneNumber": "254XXXXXXXXX",
         "MpesaReceiptNumber": "PBO2ZOBY44",
         "Amount": 20000
+    }
+
+    # c2b/lipa na mpesa successful payment done.
+    "data": {
+        "Success": true,
+        "Description": "The service request is processed successfully.",
+        "ReferenceNumber": "2BONOSBBTN",
+        "PhoneNumber": "254XXXXXXXXX",
+        "MpesaReceiptNumber": "PBO2ZOBY44",
+        "Amount": 20000,
+        'TransactionType': 'Pay Bill'
+        'OrgAccountBalance': 50000
     }
 
     # stk/c2b payment not done
@@ -233,9 +245,9 @@ This are the responses that one expects from each api requests.
 
 ## Version Guidance
 
-| Version | Status     | Packagist           | Namespace    | Repo                |
-|---------|------------|---------------------|--------------|---------------------|
-| 1.x     | Latest     | `shiftechafrica/pam-php-sdk` | `PAM` | [v1.3.6](https://github.com/SHIFTECH-AFRICA/pam-php-sdk/releases/tag/v1.3.6)|
+| Version | Status | Packagist                    | Namespace | Repo                                                                         |
+| ------- | ------ | ---------------------------- | --------- | ---------------------------------------------------------------------------- |
+| 1.x     | Latest | `shiftechafrica/pam-php-sdk` | `PAM`     | [v1.3.6](https://github.com/SHIFTECH-AFRICA/pam-php-sdk/releases/tag/v1.3.6) |
 
 [pam-php-sdk-repo]: https://github.com/SHIFTECH-AFRICA/pam-php-sdk.git
 
