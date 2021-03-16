@@ -57,8 +57,9 @@ php artisan vendor:publish --provider="PAM\PAMServiceProvider"
 A *config/.php* file will be created, follow the example below to define your own configurations.
 
 ```php
-# set your account secret key
-PAM_API_TOKEN=
+# set your account secret key api token
+PAM_API_TOKEN=check_on_api_profile
+PAM_APP_SHORTCODE_SECRET_KEY=check_on_the_app_pay_bill
 ```
 
 ## Usage
