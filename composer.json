@@ -11,7 +11,8 @@
         "stk-push",
         "c2b",
         "b2c",
-        "lipa-na-mpesa"
+        "lipa-na-mpesa",
+        "fintech solution"
     ],
     "authors": [
         {
@@ -21,7 +22,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "guzzlehttp/guzzle": "^7.2"
+        "guzzlehttp/guzzle": "^7.3"
     },
     "autoload": {
         "psr-4": {

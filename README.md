@@ -43,20 +43,20 @@ Next, run the Composer command to install the latest stable version of *shiftech
 
 After installing, the package will be auto discovered, But if need you may run:
 
-```php
+```bash
 # run for auto discovery <-- If the package is not detected automatically -->
 composer dump-autoload
 ```
 
 Then run this, to get the *config/pam.php* for your own configurations:
 
-```php
+```bash
 # run this to get the configuration file at config/pam.php <-- read through it -->
 php artisan vendor:publish --provider="PAM\PAMServiceProvider"
 ```
 A *config/.php* file will be created, follow the example below to define your own configurations.
 
-```php
+```bash
 # set your account secret key api token
 PAM_API_TOKEN=check_on_api_profile
 PAM_APP_SHORTCODE_SECRET_KEY=check_on_the_app_pay_bill
@@ -69,11 +69,14 @@ Follow the steps below on how to use the pam-php-sdk:
 How to use the pam-php-sdk to initiate different levels of *api's*
 
 ```php
+        use PAM\API\PayLoad;
+        use PAM\API\ShortCode;
+        use PAM\API\App;
+        
         /**
          * Fetch all your shortcodes
          */
         return (new ShortCode())->index();
-
 
         /**
          * Get details of one shortcode
@@ -81,12 +84,10 @@ How to use the pam-php-sdk to initiate different levels of *api's*
          */
         return (new ShortCode())->show('id');
 
-
         /**
          * Fetch all your apps
          */
         return (new App())->index();
-
 
         /**
          * Get details of one app
@@ -94,6 +95,16 @@ How to use the pam-php-sdk to initiate different levels of *api's*
          */
         return (new App())->show('id');
 
+        /**
+         * Fetch max <= 1000 latest transactions
+         */
+        return (new PayLoad())->index();
+
+        /**
+         * Get details of one payload
+         * by passing the id
+         */
+        return (new PayLoad())->show('id');
 
         /**
          * get the validate shortcode
@@ -104,7 +115,6 @@ How to use the pam-php-sdk to initiate different levels of *api's*
             "ConsumerSecret" => "",
             "Environment" => "" // sandbox or production
         ]);
-
 
         /**
          * get the initiate stk
@@ -121,7 +131,6 @@ How to use the pam-php-sdk to initiate different levels of *api's*
             "Description" => ""
         ]);
 
-
         /**
          * register c2b url for lipa_na_mpesa
          * @return JsonResponse|mixed
@@ -129,7 +138,6 @@ How to use the pam-php-sdk to initiate different levels of *api's*
         return (new RegC2bUrl())->registerC2BURL([
             "Secret" => ""
         ]);
-
 
         /**
          * process the b2c transaction
@@ -148,7 +156,7 @@ How to use the pam-php-sdk to initiate different levels of *api's*
 ```
 
 ## API Responses
-This are the responses that one expects from each api requests.
+These are the responses that one expects from each api requests.
 
 ### PayBill/ShortCode Credentials Validation
 ```php
@@ -248,7 +256,7 @@ This are the responses that one expects from each api requests.
 
 | Version | Status | Packagist                    | Namespace | Repo                                                                         |
 | ------- | ------ | ---------------------------- | --------- | ---------------------------------------------------------------------------- |
-| 1.x     | Latest | `shiftechafrica/pam-php-sdk` | `PAM`     | [v1.3.6](https://github.com/SHIFTECH-AFRICA/pam-php-sdk/releases/tag/v1.3.6) |
+| 1.x     | Latest | `shiftechafrica/pam-php-sdk` | `PAM`     | [v1.3.7](https://github.com/SHIFTECH-AFRICA/pam-php-sdk/releases/tag/v1.3.7) |
 
 [pam-php-sdk-repo]: https://github.com/SHIFTECH-AFRICA/pam-php-sdk.git
 

@@ -16,6 +16,7 @@ return [
             'token' => 'token', // GET
             'shortcode' => 'shortcode', // GET
             'app' => 'app', // GET
+            'pay_loads' => 'pay-loads', // GET
         ],
         'm_pesa' => [
             'shortcode_validate' => 'm-pesa/shortcode/validate', // POST
