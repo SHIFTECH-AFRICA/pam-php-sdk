@@ -17,8 +17,6 @@
   <a href="https://packagist.org/packages/shiftechafrica/pam-php-sdk">
   <img src="https://poser.pugx.org/shiftechafrica/pam-php-sdk/downloads">
   </a>
-  <br><br>
-  <img src="https://pam.easyncpay.com/img/about/circle.png" width="200">
 </p>
 
 ## Introduction
