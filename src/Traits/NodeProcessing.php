@@ -87,7 +87,7 @@ trait NodeProcessing
      * @return string
      * ---------------------------------
      */
-    public function processRequest(string $requestUrl, string $method = 'POST', $data = [], bool $token = false)
+    public function processRequest(string $requestUrl, string $method = 'POST', array $data = [], bool $token = false)
     {
         try {
             // define the guzzle client

@@ -17,7 +17,7 @@ trait NodeResponse
      * @param int $code
      * @return JsonResponse|object
      */
-    public function successResponse($data, $code = Response::HTTP_OK)
+    public function successResponse($data, int $code = Response::HTTP_OK)
     {
         if ($data instanceof Collection) {
             return API::collection($data)

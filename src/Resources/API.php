@@ -13,7 +13,7 @@ class API extends JsonResource
      * @param Request $request
      * @return array
      */
-    public function toArray($request)
+    public function toArray($request): array
     {
         return parent::toArray($request);
     }
@@ -23,7 +23,7 @@ class API extends JsonResource
      * @param $request
      * @return array
      */
-    public function with($request)
+    public function with($request): array
     {
         return [
             'api-version' => '1.0.0',
