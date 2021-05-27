@@ -22,6 +22,7 @@
 </p>
 
 ## Introduction
+
 This library handles all the PAM - PayBill Account Manager API's,that are then linked to Safaricom M-pesa Portals.
 
 ## Installing
@@ -54,63 +55,69 @@ Then run this, to get the *config/pam.php* for your own configurations:
 # run this to get the configuration file at config/pam.php <-- read through it -->
 php artisan vendor:publish --provider="PAM\PAMServiceProvider"
 ```
+
 A *config/.php* file will be created, follow the example below to define your own configurations.
 
-```bash
+```dotenv
 # set your account secret key api token
 PAM_API_TOKEN=check_on_api_profile
 PAM_APP_SHORTCODE_SECRET_KEY=check_on_the_app_pay_bill
 ```
 
 ## Usage
+
 Follow the steps below on how to use the pam-php-sdk:
 
 #### How to use the Library
+
 How to use the pam-php-sdk to initiate different levels of *api's*
 
 ```php
+        use PAM\API\B2C;
         use PAM\API\PayLoad;
+        use PAM\API\RegC2bUrl;
         use PAM\API\ShortCode;
         use PAM\API\App;
+        use PAM\API\STKPush;
         
         /**
          * Fetch all your shortcodes
          */
-        return (new ShortCode())->index();
+        (new ShortCode())->index();
 
         /**
          * Get details of one shortcode
          * by passing the id
          */
-        return (new ShortCode())->show('id');
+        (new ShortCode())->show('id');
 
         /**
          * Fetch all your apps
          */
-        return (new App())->index();
+        (new App())->index();
 
         /**
          * Get details of one app
          * by passing the id
          */
-        return (new App())->show('id');
+        (new App())->show('id');
 
         /**
          * Fetch max <= 1000 latest transactions
          */
-        return (new PayLoad())->index();
+        (new PayLoad())->index();
 
         /**
          * Get details of one payload
          * by passing the id
          */
-        return (new PayLoad())->show('id');
+        (new PayLoad())->show('id');
 
         /**
          * get the validate shortcode
          * @return mixed
          */
-        return (new ShortCode())->validate([
+        (new ShortCode())->validate([
             "ConsumerKey" => "",
             "ConsumerSecret" => "",
             "Environment" => "" // sandbox or production
@@ -121,7 +128,7 @@ How to use the pam-php-sdk to initiate different levels of *api's*
          * push
          * @return mixed
          */
-        return (new STKPush())->initiateSTK([
+        (new STKPush())->initiateSTK([
             "CallingCode" => "", // 254 or 255
             "Secret" => "",
             "TransactionType" => "", // CustomerPayBillOnline or CustomerBuyGoodsOnline
@@ -135,7 +142,7 @@ How to use the pam-php-sdk to initiate different levels of *api's*
          * register c2b url for lipa_na_mpesa
          * @return JsonResponse|mixed
          */
-        return (new RegC2bUrl())->registerC2BURL([
+        (new RegC2bUrl())->registerC2BURL([
             "Secret" => ""
         ]);
 
@@ -144,7 +151,7 @@ How to use the pam-php-sdk to initiate different levels of *api's*
          * here
          * @return mixed
          */
-        return (new B2C())->initiateB2C([
+        (new B2C())->initiateB2C([
             "CallingCode" => "", // 254 or 255
             "Secret" => "",
             "TransactionType" => "", // SalaryPayment or BusinessPayment or PromotionPayment
@@ -156,9 +163,11 @@ How to use the pam-php-sdk to initiate different levels of *api's*
 ```
 
 ## API Responses
+
 These are the responses that one expects from each api requests.
 
 ### PayBill/ShortCode Credentials Validation
+
 ```php
 
    # Sample 200 response
@@ -170,6 +179,7 @@ These are the responses that one expects from each api requests.
 ```
 
 ### Register C2B URL (confirm/validation)
+
 ```php
 
      # Sample 200 response
@@ -181,6 +191,7 @@ These are the responses that one expects from each api requests.
 ```
 
 ### STK-PUSH/C2B LIPA NA M-PESA
+
 ```php
 
     # This the response for making a successful request
@@ -222,8 +233,8 @@ These are the responses that one expects from each api requests.
 
 ```
 
-
 ### B2C/BULK PAYMENT
+
 ```php
 
     # This the response for making a successful request
@@ -260,12 +271,14 @@ These are the responses that one expects from each api requests.
 
 | Version | Status | Packagist                    | Namespace | Repo                                                                         |
 | ------- | ------ | ---------------------------- | --------- | ---------------------------------------------------------------------------- |
-| 1.x     | Latest | `shiftechafrica/pam-php-sdk` | `PAM`     | [v1.3.7](https://github.com/SHIFTECH-AFRICA/pam-php-sdk/releases/tag/v1.3.8) |
+| 1.x     | Latest | `shiftechafrica/pam-php-sdk` | `PAM`     | [v1.3.9](https://github.com/SHIFTECH-AFRICA/pam-php-sdk/releases/tag/v1.3.9) |
 
 [pam-php-sdk-repo]: https://github.com/SHIFTECH-AFRICA/pam-php-sdk.git
 
 ## Security Vulnerabilities
- For any security vulnerabilities, please email to [Shiftech Africa](mailto:bugs@shiftech.co.ke).
- 
+
+For any security vulnerabilities, please email to [Shiftech Africa](mailto:bugs@shiftech.co.ke).
+
 ## License
- This package is open-source, licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+This package is open-source, licensed under the [MIT License](https://opensource.org/licenses/MIT).
