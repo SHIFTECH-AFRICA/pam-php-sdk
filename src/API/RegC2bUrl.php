@@ -19,7 +19,7 @@ class RegC2bUrl
     /**
      * @var Repository|Application|mixed
      */
-    private $baseUri;
+    private mixed $baseUri;
 
     /**
      * -----------------------------
@@ -35,9 +35,9 @@ class RegC2bUrl
      * register the c2b urls
      * to get the callbacks
      * @param array $options
-     * @return JsonResponse|mixed
+     * @return mixed
      */
-    public function registerC2BURL(array $options)
+    public function registerC2BURL(array $options): mixed
     {
         try {
             return json_decode($this->processRequest(

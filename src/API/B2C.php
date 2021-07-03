@@ -18,7 +18,7 @@ class B2C
     /**
      * @var Repository|Application|mixed
      */
-    private $baseUri;
+    private mixed $baseUri;
 
     /**
      * -----------------------------
@@ -38,7 +38,7 @@ class B2C
      * @param array $options
      * @return mixed
      */
-    public function initiateB2C(array $options)
+    public function initiateB2C(array $options): mixed
     {
         try {
             return json_decode($this->processRequest(
