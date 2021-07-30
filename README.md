@@ -79,6 +79,7 @@ How to use the pam-php-sdk to initiate different levels of *api's*
         use PAM\API\ShortCode;
         use PAM\API\App;
         use PAM\API\STKPush;
+        use PAM\API\Balance;
         
         /**
          * Fetch all your shortcodes
@@ -147,6 +148,14 @@ How to use the pam-php-sdk to initiate different levels of *api's*
         ]);
 
         /**
+         * check paybill/till balance
+         * @return JsonResponse|mixed
+         */
+        (new Balance())->checkBalance([
+            "Secret" => ""
+        ]);
+
+        /**
          * process the b2c transaction
          * here
          * @return mixed
@@ -185,6 +194,19 @@ These are the responses that one expects from each api requests.
      # Sample 200 response
     "data": {
         "Message": "Validation and Confirmation URLs are already registered"
+    },
+    "success": true
+
+```
+
+### Balance Response
+
+```php
+
+     # Sample 200 response
+    "data": {
+        "Number": XXXXX,
+        "Balance": 38,000.00
     },
     "success": true
 
@@ -271,7 +293,7 @@ These are the responses that one expects from each api requests.
 
 | Version | Status | Packagist                    | Namespace | Repo                                                                         |
 | ------- | ------ | ---------------------------- | --------- | ---------------------------------------------------------------------------- |
-| 1.x     | Latest | `shiftechafrica/pam-php-sdk` | `PAM`     | [v1.3.9](https://github.com/SHIFTECH-AFRICA/pam-php-sdk/releases/tag/v1.3.9) |
+| 1.x     | Latest | `shiftechafrica/pam-php-sdk` | `PAM`     | [v1.4.1](https://github.com/SHIFTECH-AFRICA/pam-php-sdk/releases/tag/v1.4.1) |
 
 [pam-php-sdk-repo]: https://github.com/SHIFTECH-AFRICA/pam-php-sdk.git
 

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace PAM\API;
-
 
 use Exception;
 use Illuminate\Config\Repository;
@@ -11,7 +9,7 @@ use Illuminate\Http\Response;
 use PAM\Traits\NodeProcessing;
 use PAM\Traits\NodeResponse;
 
-class RegC2bUrl
+class Balance
 {
     use NodeProcessing, NodeResponse;
 
@@ -31,16 +29,15 @@ class RegC2bUrl
     }
 
     /**
-     * register the c2b urls
-     * to get the callbacks
+     * get the balance
      * @param array $options
      * @return mixed
      */
-    public function registerC2BURL(array $options): mixed
+    public function checkBalance(array $options): mixed
     {
         try {
             return json_decode($this->processRequest(
-                config('pam.url.m_pesa.reg_c2b_url'),
+                config('pam.url.m_pesa.balance'),
                 'POST',
                 $options
             ));
