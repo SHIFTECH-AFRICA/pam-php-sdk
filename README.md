@@ -242,7 +242,8 @@ These are the responses that one expects from each api requests.
         "MpesaReceiptNumber": "PBO2ZOBY44",
         "Amount": 20000,
         'TransactionType': 'Pay Bill'
-        'OrgAccountBalance': 50000
+        'OrgAccountBalance': 50000,
+        'ShortCode':xxxxxx
     }
 
     # stk/c2b payment not done
