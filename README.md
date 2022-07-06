@@ -169,6 +169,17 @@ How to use the pam-php-sdk to initiate different levels of *api's*
             "ResultUrl" => "",
             "Description" => ""
         ]);
+
+        /**
+         * process the stk payment confirmation
+         * here
+         * @return mixed
+         */
+        return (new ConfirmPayment())->stkPayment([
+            "Secret" => "",
+            "ReferenceNumber" => "", // the transaction number used for initiating the payment.
+            "ResultUrl" => "", // url to receive the payment status
+        ]);
 ```
 
 ## API Responses
@@ -253,6 +264,22 @@ These are the responses that one expects from each api requests.
         "ReferenceNumber": "2BOXRDNMLU",
         "PhoneNumber": "254XXXXXXXXX"
     }
+    
+    # This the response for checking stk push payment - similar to mpesa stk push query
+    "data": {
+        "Message": "Accepted for processing..."
+    }
+    "success": true
+    
+    # stk push payment confirmation callback...
+    "data": {
+        "Success": true or false,
+        "Description": "The service request is processed successfully.",
+        "ReferenceNumber": "2BONOSBBTN",
+        "PhoneNumber": "254XXXXXXXXX",
+        "MpesaReceiptNumber": "PBO2ZOBY44",
+        "Amount": 20000
+    }
 
 ```
 
@@ -294,7 +321,7 @@ These are the responses that one expects from each api requests.
 
 | Version | Status | Packagist                    | Namespace | Repo                                                                         |
 | ------- | ------ | ---------------------------- | --------- |------------------------------------------------------------------------------|
-| 1.x     | Latest | `shiftechafrica/pam-php-sdk` | `PAM`     | [v1.4.3](https://github.com/SHIFTECH-AFRICA/pam-php-sdk/releases/tag/v1.4.3) |
+| 1.x     | Latest | `shiftechafrica/pam-php-sdk` | `PAM`     | [v1.4.4](https://github.com/SHIFTECH-AFRICA/pam-php-sdk/releases/tag/v1.4.4) |
 
 [pam-php-sdk-repo]: https://github.com/SHIFTECH-AFRICA/pam-php-sdk.git
 
