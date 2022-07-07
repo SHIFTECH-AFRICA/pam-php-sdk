@@ -180,12 +180,7 @@ How to use the pam-php-sdk to initiate different levels of *api's*
             "ReferenceNumber" => "", // the transaction number used for initiating the payment.
             "ResultUrl" => "", // url to receive the payment status
         ]);
-
-        /**
-         * confirm withdraw
-         */
-        public function confirmWithdraw()
-        {
+        
             /**
              * process the withdrawal confirmation
              * here
@@ -196,7 +191,6 @@ How to use the pam-php-sdk to initiate different levels of *api's*
                 "ReferenceNumber" => "", // the transaction number used for initiating the payment.
                 "ResultUrl" => "", // url to receive the payment status
             ]);
-        }
 ```
 
 ## API Responses
