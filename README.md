@@ -176,7 +176,7 @@ How to use the pam-php-sdk to initiate different levels of *api's*
          * @return mixed
          */
         return (new ConfirmPayment())->stkPayment([
-            "Secret" => "",
+            "Secret" => "",// secret for handling stk transactions
             "ReferenceNumber" => "", // the transaction number used for initiating the payment.
             "ResultUrl" => "", // url to receive the payment status
         ]);
@@ -192,7 +192,7 @@ How to use the pam-php-sdk to initiate different levels of *api's*
              * @return mixed
              */
             return (new ConfirmPayment())->withdrawPayment([
-                "Secret" => "",
+                "Secret" => "", // secret for handling b2c transactions
                 "ReferenceNumber" => "", // the transaction number used for initiating the payment.
                 "ResultUrl" => "", // url to receive the payment status
             ]);
