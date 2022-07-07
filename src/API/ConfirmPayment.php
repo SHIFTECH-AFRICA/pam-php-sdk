@@ -29,7 +29,9 @@ class ConfirmPayment
     }
 
     /**
-     * register the c2b urls
+     * confirm if payment was
+     * made for the stk
+     * payment
      * to get the callbacks
      * @param array $options
      * @return mixed
@@ -39,6 +41,29 @@ class ConfirmPayment
         try {
             return json_decode($this->processRequest(
                 config('pam.url.m_pesa.confirm_stk_payment'),
+                'POST',
+                $options
+            ));
+        } catch (Exception $exception) {
+            return $this->errorResponse(
+                $exception->getMessage(),
+                Response::HTTP_INTERNAL_SERVER_ERROR
+            );
+        }
+    }
+
+    /**
+     * confirm if thw withdraw
+     * was done to the client
+     * to get the callbacks
+     * @param array $options
+     * @return mixed
+     */
+    public function withdrawPayment(array $options): mixed
+    {
+        try {
+            return json_decode($this->processRequest(
+                config('pam.url.m_pesa.confirm_withdraw'),
                 'POST',
                 $options
             ));

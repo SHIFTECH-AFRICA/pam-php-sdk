@@ -180,6 +180,23 @@ How to use the pam-php-sdk to initiate different levels of *api's*
             "ReferenceNumber" => "", // the transaction number used for initiating the payment.
             "ResultUrl" => "", // url to receive the payment status
         ]);
+
+        /**
+         * confirm withdraw
+         */
+        public function confirmWithdraw()
+        {
+            /**
+             * process the withdrawal confirmation
+             * here
+             * @return mixed
+             */
+            return (new ConfirmPayment())->withdrawPayment([
+                "Secret" => "",
+                "ReferenceNumber" => "", // the transaction number used for initiating the payment.
+                "ResultUrl" => "", // url to receive the payment status
+            ]);
+        }
 ```
 
 ## API Responses
@@ -313,6 +330,25 @@ These are the responses that one expects from each api requests.
         "Description": "The initiator information is invalid.",
         "ReferenceNumber": "2BO6BCTLYF",
         "PhoneNumber": "254XXXXXXXXX"
+    }   
+     
+    # This the response for checking withdrawal payment
+    "data": {
+        "Message": "Accepted for processing..."
+    }
+    "success": true
+    
+    # withdrawal payment confirmation callback...
+    "data": {
+       'Success' => true or false,
+       'Description' => 'Salary payment',
+       'ReferenceNumber' => '2BO6BCTLYF',
+       'PhoneNumber' => '254XXXXXXXXX',
+       'MpesaReceiptNumber' => 'PBO2ZOBY44',
+       'Amount' => 50000,
+       'B2CUtilityAccountAvailableFunds' => 70000,
+       'B2CWorkingAccountAvailableFunds' => 70000,
+       'B2CChargesPaidAccountAvailableFunds' => 70000
     }
 
 ```
@@ -321,7 +357,7 @@ These are the responses that one expects from each api requests.
 
 | Version | Status | Packagist                    | Namespace | Repo                                                                         |
 | ------- | ------ | ---------------------------- | --------- |------------------------------------------------------------------------------|
-| 1.x     | Latest | `shiftechafrica/pam-php-sdk` | `PAM`     | [v1.4.4](https://github.com/SHIFTECH-AFRICA/pam-php-sdk/releases/tag/v1.4.4) |
+| 1.x     | Latest | `shiftechafrica/pam-php-sdk` | `PAM`     | [v1.4.5](https://github.com/SHIFTECH-AFRICA/pam-php-sdk/releases/tag/v1.4.5) |
 
 [pam-php-sdk-repo]: https://github.com/SHIFTECH-AFRICA/pam-php-sdk.git
 
