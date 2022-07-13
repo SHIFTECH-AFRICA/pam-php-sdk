@@ -18,7 +18,7 @@ class STKPush
     /**
      * @var Repository|Application|mixed
      */
-    private $baseUri;
+    private mixed $baseUri;
 
     /**
      * -----------------------------
@@ -38,7 +38,7 @@ class STKPush
      * @param array $options
      * @return mixed
      */
-    public function initiateSTK(array $options)
+    public function initiateSTK(array $options): mixed
     {
         try {
             return json_decode($this->processRequest(

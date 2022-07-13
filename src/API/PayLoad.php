@@ -18,7 +18,7 @@ class PayLoad
     /**
      * @var Repository|Application|mixed
      */
-    private $baseUri;
+    private mixed $baseUri;
 
     /**
      * -----------------------------
@@ -37,7 +37,7 @@ class PayLoad
      * -------------------------------
      * @return mixed
      */
-    public function index()
+    public function index(): mixed
     {
         try {
             return json_decode($this->processRequest(
@@ -59,7 +59,7 @@ class PayLoad
      * @return mixed
      * --------------------------------
      */
-    public function show(string $id)
+    public function show(string $id): mixed
     {
         try {
             return json_decode($this->processRequest(

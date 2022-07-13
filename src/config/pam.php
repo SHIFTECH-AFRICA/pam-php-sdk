@@ -20,9 +20,12 @@ return [
         ],
         'm_pesa' => [
             'shortcode_validate' => 'm-pesa/shortcode/validate', // POST
+            'balance' => 'm-pesa/shortcode/balance', // POST
             'stk_push' => 'm-pesa/c2b/stk-push', // POST
             'reg_c2b_url' => 'm-pesa/c2b/register-url', // POST
+            'confirm_stk_payment' => 'm-pesa/c2b/confirm-stk-payment', // POST
             'b2c' => 'm-pesa/b2c', // POST
+            'confirm_withdraw' => 'm-pesa/b2c/confirm-withdraw', // POST
         ],
     ],
 

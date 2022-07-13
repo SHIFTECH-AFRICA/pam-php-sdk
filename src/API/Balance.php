@@ -1,8 +1,6 @@
 <?php
 
-
 namespace PAM\API;
-
 
 use Exception;
 use Illuminate\Config\Repository;
@@ -11,7 +9,7 @@ use Illuminate\Http\Response;
 use PAM\Traits\NodeProcessing;
 use PAM\Traits\NodeResponse;
 
-class B2C
+class Balance
 {
     use NodeProcessing, NodeResponse;
 
@@ -31,18 +29,15 @@ class B2C
     }
 
     /**
-     * -------------------------------
-     * Initiate b2c for m-pesa
-     * transactions
-     * -------------------------------
+     * get the balance
      * @param array $options
      * @return mixed
      */
-    public function initiateB2C(array $options): mixed
+    public function checkBalance(array $options): mixed
     {
         try {
             return json_decode($this->processRequest(
-                config('pam.url.m_pesa.b2c'),
+                config('pam.url.m_pesa.balance'),
                 'POST',
                 $options
             ));
@@ -53,5 +48,4 @@ class B2C
             );
         }
     }
-
 }
