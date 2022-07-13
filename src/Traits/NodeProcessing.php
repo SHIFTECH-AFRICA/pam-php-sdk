@@ -4,12 +4,14 @@
 namespace PAM\Traits;
 
 
+use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\ServerException;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
+use JetBrains\PhpStorm\ArrayShape;
 
 trait NodeProcessing
 {
@@ -19,7 +21,7 @@ trait NodeProcessing
      * the API's
      * @return mixed
      */
-    private function getToken()
+    private function getToken(): mixed
     {
         $options = [
             'headers' => [
@@ -51,7 +53,7 @@ trait NodeProcessing
      * @return mixed
      * --------------------------
      */
-    private function cacheAccessToken($response)
+    private function cacheAccessToken($response): mixed
     {
         return Cache::remember('pam_access_token', now()->addSeconds($response->data->Expires - 5), function () use ($response) {
             return $response->data->Token;
@@ -65,6 +67,7 @@ trait NodeProcessing
      * @param array $data
      * @return array[]
      */
+    #[ArrayShape(['headers' => "string[]", 'json' => "array"])]
     private function setRequestOptions(array $data): array
     {
         return [
@@ -81,13 +84,13 @@ trait NodeProcessing
      * ---------------------------------
      * process the request
      * @param string $requestUrl
-     * @param array $data
      * @param string $method
+     * @param array $data
      * @param bool $token
-     * @return string
+     * @return Exception|string|GuzzleException
      * ---------------------------------
      */
-    public function processRequest(string $requestUrl, string $method = 'POST', $data = [], bool $token = false)
+    public function processRequest(string $requestUrl, string $method = 'POST', array $data = [], bool $token = false): Exception|string|GuzzleException
     {
         try {
             // define the guzzle client

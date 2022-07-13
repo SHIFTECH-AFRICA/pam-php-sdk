@@ -4,6 +4,7 @@ namespace PAM\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use JetBrains\PhpStorm\ArrayShape;
 
 class API extends JsonResource
 {
@@ -13,7 +14,7 @@ class API extends JsonResource
      * @param Request $request
      * @return array
      */
-    public function toArray($request)
+    public function toArray($request): array
     {
         return parent::toArray($request);
     }
@@ -23,7 +24,8 @@ class API extends JsonResource
      * @param $request
      * @return array
      */
-    public function with($request)
+    #[ArrayShape(['api-version' => "string", 'author' => "string", 'author-url' => "\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\UrlGenerator|string"])]
+    public function with($request): array
     {
         return [
             'api-version' => '1.0.0',
