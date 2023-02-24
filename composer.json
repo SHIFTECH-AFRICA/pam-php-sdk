@@ -22,7 +22,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "guzzlehttp/guzzle": "^7.4"
+        "guzzlehttp/guzzle": "^7.5"
     },
     "autoload": {
         "psr-4": {
