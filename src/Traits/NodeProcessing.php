@@ -94,7 +94,7 @@ trait NodeProcessing
 
             return $response;
         } catch (Exception  $connectionException) {
-            Log::critical($method . ' Client Connection Exception' . $connectionException->getMessage());
+            Log::critical($method . ' Pam Sdk Client Connection Exception' . $connectionException->getMessage());
             return $connectionException;
         }
     }
