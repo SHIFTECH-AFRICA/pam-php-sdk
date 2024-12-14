@@ -33,8 +33,8 @@ trait NodeProcessing
         } else {
             $response = json_decode(Http::withHeaders($options)
                 ->baseUrl(config('pam.url.endpoint'))
-                ->timeout(120)
-                ->connectTimeout(60)
+                ->timeout(config('pam.timeout'))
+                ->connectTimeout(config('pam.connect_timeout'))
                 ->retry(2)
                 ->get(
                     config('pam.url.pam.token')
@@ -72,8 +72,8 @@ trait NodeProcessing
                 $response = Http::acceptJson()
                     ->baseUrl(config('pam.url.endpoint'))
                     ->withToken($this->getToken())
-                    ->timeout(120)
-                    ->connectTimeout(60)
+                    ->timeout(config('pam.timeout'))
+                    ->connectTimeout(config('pam.connect_timeout'))
                     ->retry(3)
                     ->post(
                         $requestUrl,
@@ -83,8 +83,8 @@ trait NodeProcessing
                 $response = Http::acceptJson()
                     ->baseUrl(config('pam.url.endpoint'))
                     ->withToken($this->getToken())
-                    ->timeout(120)
-                    ->connectTimeout(60)
+                    ->timeout(config('pam.timeout'))
+                    ->connectTimeout(config('pam.connect_timeout'))
                     ->retry(3)
                     ->get(
                         $requestUrl,
