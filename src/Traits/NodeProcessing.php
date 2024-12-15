@@ -35,7 +35,7 @@ trait NodeProcessing
                 ->baseUrl(config('pam.url.endpoint'))
                 ->timeout(config('pam.timeout'))
                 ->connectTimeout(config('pam.connect_timeout'))
-                ->retry(2)
+                ->retry(1)
                 ->get(
                     config('pam.url.pam.token')
                 ));
@@ -74,7 +74,7 @@ trait NodeProcessing
                     ->withToken($this->getToken())
                     ->timeout(config('pam.timeout'))
                     ->connectTimeout(config('pam.connect_timeout'))
-                    ->retry(3)
+                    ->retry(1)
                     ->post(
                         $requestUrl,
                         $data
@@ -85,7 +85,7 @@ trait NodeProcessing
                     ->withToken($this->getToken())
                     ->timeout(config('pam.timeout'))
                     ->connectTimeout(config('pam.connect_timeout'))
-                    ->retry(3)
+                    ->retry(1)
                     ->get(
                         $requestUrl,
                         $data
